@@ -1,0 +1,134 @@
+/* ============ Birthday Umi — design tokens ============ */
+:root {
+  --cream: #f5e7cd;
+  --cream-deep: #ebd6b0;
+  --paper: #faf1de;
+  --plum: #2a1830;
+  --plum-soft: #3d2547;
+  --plum-deep: #1c0f24;
+  --gold: #c89b3c;
+  --gold-bright: #e0b658;
+  --gold-deep: #8f6b1f;
+  --rose: #b86a7a;
+  --rose-deep: #8a3a4a;
+  --sage: #8a9c70;
+  --ink: #2a1830;
+  --ink-soft: #5a4255;
+
+  --serif: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --script: "Caveat", "Homemade Apple", cursive;
+  --display: "Italiana", "Cormorant Garamond", serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--serif);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* warm paper texture overlay */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(184,106,122,0.06), transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(200,155,60,0.07), transparent 50%);
+}
+
+.serif { font-family: var(--serif); }
+.script { font-family: var(--script); }
+.display { font-family: var(--display); }
+
+/* ===== Section scaffolding ===== */
+section.scene {
+  position: relative;
+  padding: 120px 6vw;
+  min-height: 90vh;
+}
+section.scene.dark {
+  background: var(--plum);
+  color: var(--cream);
+}
+section.scene.dark .ink-soft { color: #c8b8be; }
+
+.section-eyebrow {
+  font-family: var(--script);
+  color: var(--gold);
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.section-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
+}
+.section-title em {
+  font-family: var(--script);
+  font-style: normal;
+  color: var(--rose);
+  font-size: 1.1em;
+}
+section.scene.dark .section-title em { color: var(--gold-bright); }
+
+/* small decorative rule */
+.rule {
+  display: inline-flex; align-items: center; gap: 14px;
+  color: var(--gold); font-family: var(--script); font-size: 22px;
+}
+.rule::before, .rule::after {
+  content: ""; width: 60px; height: 1px; background: currentColor; opacity: 0.6;
+}
+
+/* ===== Helpers ===== */
+.center { text-align: center; }
+.flex-col-c { display: flex; flex-direction: column; align-items: center; }
+
+button.bare {
+  background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0;
+}
+
+/* ===== Confetti canvas ===== */
+#confetti-canvas {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9000;
+}
+
+/* ===== Floral SVG strokes ===== */
+.flower-stroke { stroke: currentColor; fill: none; stroke-width: 1.2; stroke-linecap: round; }
+.flower-fill { fill: currentColor; }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50%      { transform: translateY(-8px) rotate(calc(var(--r, 0deg) + 1deg)); }
+}
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; }
+  25%      { transform: scaleY(1.08) scaleX(0.96) translateY(-1px); opacity: .92; }
+  50%      { transform: scaleY(0.95) scaleX(1.04) translateY(1px); opacity: 1; }
+  75%      { transform: scaleY(1.04) scaleX(0.98) translateY(-2px); opacity: .95; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.in {
+  opacity: 1; transform: translateY(0);
+}
