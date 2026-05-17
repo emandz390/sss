@@ -68,10 +68,14 @@ function Letter() {
         .letter-scene { background: var(--cream); padding-bottom: 160px; }
         .envelope-wrap {
           position: relative; width: min(560px, 90vw); margin: 0 auto;
-          aspect-ratio: 3/2;
+          min-height: calc(min(560px, 90vw) * 2 / 3);
+          transition: min-height 0.6s ease;
+        }
+        .envelope-wrap.open {
+          min-height: clamp(560px, 160vw, 820px);
         }
         .envelope {
-          position: relative; width: 100%; height: 100%;
+          position: absolute; top: 0; left: 0; width: 100%; height: calc(min(560px, 90vw) * 2 / 3);
           background: transparent; border: none; padding: 0; cursor: pointer;
           filter: drop-shadow(0 30px 50px rgba(42, 24, 48, 0.18));
           transition: transform 0.6s ease, opacity 0.6s ease;
@@ -121,6 +125,12 @@ function Letter() {
         .paper-inner .sign { font-size: 32px; color: var(--rose-deep); text-align: right; margin-top: 4px; }
         .sign-block { display: flex; flex-direction: column; align-items: flex-end; margin-top: 22px; }
         .sig-img { height: 60px; width: auto; opacity: 0.85; margin-bottom: 4px; }
+        @media (max-width: 600px) {
+          .letter-paper { padding: 40px 28px 40px; }
+          .paper-inner { font-size: 17px; line-height: 28px; }
+          .paper-inner .dear { font-size: 28px; }
+          .paper-inner .sign { font-size: 26px; }
+        }
       `}</style>
     </section>
   );
