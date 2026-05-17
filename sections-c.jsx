@@ -378,14 +378,14 @@ function Signature() {
           <Wreath size={200} />
         </div>
         <p className="display sig-up">selamat hari lahir,</p>
-        <p className="script sig-name">Umi Noorhayati</p>
-        <p className="display sig-down">forty-five years of light</p>
+        <p className="script sig-name">Umi</p>
+        <p className="display sig-down">empat puluh lima tahun penuh warna-warni</p>
         <div className="rule" style={{ margin: "30px auto 16px", color: "var(--rose)" }}>
-          with all our hearts
+          sepenuh hati kami
         </div>
         <p className="script sig-from">Daripada Along</p>
         <p style={{ fontSize: 13, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--ink-soft)", marginTop: 40 }}>
-          17 May 2026 · made with love, not money
+          18 Mei 2026 · dibuat dengan kasih sayang, bukan duit
         </p>
       </div>
 

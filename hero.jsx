@@ -65,14 +65,14 @@ function Hero() {
 
       <div className="hero-inner">
         <div className="hero-eyebrow">
-          <span className="rule">an evening of forty-five</span>
+          <span className="rule">Kad hari lahir yang dibuat dengan ikhlas</span>
         </div>
 
         <h1 className="hero-title">
           <span className="hero-sub display">Selamat Hari Lahir</span>
           <span className="hero-name script">Umi</span>
           <span className="hero-name-line"></span>
-          <span className="hero-for display">Noorhayati</span>
+          <span className="hero-for display">Insan paling istimewa dalam hidup Along</span>
         </h1>
 
         <div className="cake-wrap" ref={cakeRef}>
@@ -83,12 +83,12 @@ function Hero() {
           {!allBlown ? (
             <span className="script">
               {blown.filter(Boolean).length === 0
-                ? "tap the candles to blow them out, one by one…"
-                : `${CANDLE_COUNT - blown.filter(Boolean).length} candle${CANDLE_COUNT - blown.filter(Boolean).length === 1 ? "" : "s"} left — make your wish`}
+                ? "tekan lilin untuk titipkan satu doa"
+                : `${CANDLE_COUNT - blown.filter(Boolean).length} lagi — teruskan doamu`}
             </span>
           ) : (
             <span className="script" style={{ color: "var(--gold-bright)" }}>
-              wish made. now scroll, sayang ↓
+              doa sudah dititipkan. jom scroll ke bawah ↓
               <button className="bare relight" onClick={reset}>(relight)</button>
             </span>
           )}
@@ -120,9 +120,10 @@ function Hero() {
         }
         .hero-name-line { width: 80px; height: 1px; background: var(--gold); opacity: 0.6; margin: 14px 0 6px; }
         .hero-for {
-          font-size: clamp(20px, 2vw, 28px);
-          letter-spacing: 0.4em; text-transform: uppercase;
+          font-size: clamp(16px, 1.6vw, 22px);
+          letter-spacing: 0.1em; text-transform: none;
           color: var(--cream); opacity: 0.6;
+          font-style: italic;
         }
         .cake-wrap { margin: 12px 0 0; }
         .hero-prompt {
@@ -215,8 +216,8 @@ function Cake({ candleXs, blown, onBlow }) {
 
       {/* "45" written on cake side */}
       <text x="0" y="20" textAnchor="middle"
-        fontFamily="Italiana, serif" fontSize="42" fill="#e0b658" letterSpacing="6">
-        forty-five
+        fontFamily="Italiana, serif" fontSize="38" fill="#e0b658" letterSpacing="3">
+        empat puluh lima
       </text>
     </svg>
   );

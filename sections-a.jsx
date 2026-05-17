@@ -6,9 +6,9 @@ function Letter() {
   return (
     <section className="scene letter-scene" id="letter">
       <div className="reveal-on-scroll center" style={{ marginBottom: 60 }}>
-        <span className="section-eyebrow">a letter, folded carefully</span>
-        <h2 className="section-title">read me <em>first</em></h2>
-        <div className="rule">from your firstborn</div>
+        <span className="section-eyebrow">sepucuk surat nukilan rasa</span>
+        <h2 className="section-title">baca yang <em>ni dulu</em></h2>
+        <div className="rule">daripada anak sulung Umi</div>
       </div>
 
       <div className={"envelope-wrap " + (open ? "open" : "")}>
@@ -32,7 +32,7 @@ function Letter() {
             <text x="240" y="208" textAnchor="middle" fontFamily="Italiana, serif" fontSize="24" fill="var(--gold-bright)">N</text>
             {/* address */}
             <text x="240" y="260" textAnchor="middle" fontFamily="Caveat, cursive" fontSize="22" fill="var(--ink-soft)">
-              to my Umi, with love
+              untuk Umi tercinta
             </text>
             <line x1="160" y1="276" x2="320" y2="276" stroke="var(--ink-soft)" strokeWidth="0.5" opacity="0.4" />
           </svg>
@@ -41,21 +41,24 @@ function Letter() {
 
         <div className="letter-paper" aria-hidden={!open}>
           <div className="paper-inner">
-            <p className="dear script">Umi sayang,</p>
+            <p className="dear script">Ke hadapan Umi,</p>
             <p>
-              Forty-five years. Tahun ini terasa sangat istimewa — not because of the number, but because
-              of every quiet morning, every plate you set down without being asked, every flower you
-              coaxed out of stubborn soil.
+              Empat puluh lima tahun. Tahun ni rasa cukup istimewa bukan kerana angkanya, tapi kerana
+              setiap pagi yang damai, dan setiap benih yang Umi siram dengan kasih hingga mekar gembira.
             </p>
             <p>
-              I built this little corner of the internet because words on paper feel too small for what
-              I want to say. Scroll, and you will find: a cake to wish on, a garden of memories, the
-              recipes you taught me, and a gift at the end that I hope makes you laugh.
+              Website ni Along buat sebab ayat atas kertas tak lagi dapat tampung luasnya rasa terima kasih
+              along kat umi. Skrol ke bawah, dan Umi akan jumpa sebiji kek untuk mengiringi bait doa, seisi taman penuh
+              memori, montaj kenangan, dan himpunan ucapan yang moga-moga dapat buat Umi rasa gembira.
             </p>
             <p>
-              You are the steadiest thing in my life. I love you more than mangosteens in season.
+              Umilah tempat berpaut yang paling kukuh dalam hidup ni. Sayang Umi seluas langit, lebih daripada
+              indahnya hamparan bintang di langit malam.
             </p>
-            <p className="sign script">— Along</p>
+            <div className="sign-block">
+              <img src="pics/signature.png" alt="tandatangan Along" className="sig-img" />
+              <p className="sign script">anak Umi<br/>Along</p>
+            </div>
           </div>
           <div className="paper-edge" />
         </div>
@@ -115,7 +118,9 @@ function Letter() {
         .paper-inner { font-family: var(--serif); color: var(--ink); font-size: 19px; line-height: 32px; }
         .paper-inner p { margin: 0 0 14px; }
         .paper-inner .dear { font-size: 36px; color: var(--rose-deep); margin-bottom: 18px; }
-        .paper-inner .sign { font-size: 32px; color: var(--rose-deep); text-align: right; margin-top: 22px; }
+        .paper-inner .sign { font-size: 32px; color: var(--rose-deep); text-align: right; margin-top: 4px; }
+        .sign-block { display: flex; flex-direction: column; align-items: flex-end; margin-top: 22px; }
+        .sig-img { height: 60px; width: auto; opacity: 0.85; margin-bottom: 4px; }
       `}</style>
     </section>
   );
@@ -123,21 +128,21 @@ function Letter() {
 
 // ============ SECTION: Things I love about Umi ============
 const LOVE_ITEMS = [
-  { n: "01", t: "Your garden", d: "How you talk to your bunga raya every morning, calling them \"sayang\" like they understand. They do, I think." },
-  { n: "02", t: "Your laugh", d: "The one that escapes before you can cover your mouth. It is my favourite sound in the world." },
-  { n: "03", t: "Your patience", d: "You taught me to fold clothes seven times before I got it right, and never once raised your voice." },
-  { n: "04", t: "Your nasi lemak", d: "No one else's sambal tastes like home. Many have tried. Many have failed." },
-  { n: "05", t: "Your hands", d: "They have held tantrums, dough, fevers, and my whole face when I cried. They are the strongest thing I know." },
-  { n: "06", t: "Your stubbornness", d: "Watering the pokok in the rain because \"they need to know I'm here.\" Umi, I love that you are like this." },
+  { n: "01", t: "Senyuman Umi", d: "Senyuman Umi selalu buat rumah rasa lebih ceria. Kadang-kadang tak perlu cakap apa-apa pun, cukup Umi senyum, suasana terus rasa tenang." },
+  { n: "02", t: "Pokok Umi", d: "Along masih ingat macam mana Umi boleh marah bila bola kena pokok Umi, macam pokok tu pun boleh rasa sakit. Tapi sebenarnya itu yang buat kami tahu yang semua benda Umi jaga dengan penuh kasih sayang." },
+  { n: "03", t: "Kesabaran Umi", d: "Umi ajar Along lipat baju berkali-kali sampai betul. Sampai sekarang pun Along rasa macam masih tak betul-betul pandai, tapi Umi tetap sabar dan okay je dengan tu." },
+  { n: "04", t: "Masakan Umi", d: "Daging goreng, sotong celup tepung, dan semua masakan Umi memang terbaik dunia. Makan dekat mana-mana pun tetap tak boleh lawan air tangan Umi." },
+  { n: "05", t: "Tangan Umi", d: "Tangan Umi pernah jaga kami masa sakit dan siapkan macam-macam untuk kami." },
+  { n: "06", t: "Kedegilan dan Kerisauan Umi", d: "Umi boleh siram pokok walaupun hujan, kemas rumah macam tiada hari esok walaupun Ayah dah suruh berhenti, dan tetap cari kami bila kami keluar walaupun kami semua dah besar. Kadang-kadang nampak macam tak perlu, tapi sebenarnya tulah cara Umi sayang kami." },
 ];
 
 function ThingsILove() {
   return (
     <section className="scene dark love-scene" id="love">
       <div className="center" style={{ marginBottom: 80 }}>
-        <span className="section-eyebrow" style={{ color: "var(--gold-bright)" }}>a small inventory</span>
+        <span className="section-eyebrow" style={{ color: "var(--gold-bright)" }}>perkara kecil yang Along selalu ingat</span>
         <h2 className="section-title" style={{ color: "var(--cream)" }}>
-          things I love <em>about you</em>
+          tentang <em>Umi</em>
         </h2>
       </div>
 
@@ -203,22 +208,26 @@ function LoveCard({ n, t, d }) {
 
 // ============ SECTION: Photo Gallery ============
 const PHOTOS = [
-  { caption: "1981 — Umi at sixteen, on her father's bicycle.", year: "1981", color: "#b86a7a", rot: -3 },
-  { caption: "1996 — newlywed, in the garden you would later make magnificent.", year: "1996", color: "#8a9c70", rot: 2 },
-  { caption: "2003 — me, four, holding your finger like it was a rope.", year: "2003", color: "#c89b3c", rot: -2 },
-  { caption: "2011 — the year you taught me to ride a bicycle. I fell six times.", year: "2011", color: "#8a3a4a", rot: 3 },
-  { caption: "2019 — Hari Raya, three trays of kuih, all yours.", year: "2019", color: "#3d2547", rot: -1 },
-  { caption: "2024 — your bunga raya finally bloomed yellow.", year: "2024", color: "#e0b658", rot: 2 },
+  // top row: left → right
+  { caption: "Umi sentiasa pandai menghiburkan suasana dengan gelak tawa dan gurau senda.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.57.jpeg", rot: -3 },
+  { caption: "Umi sentiasa jaga pemakanan kami, walaupun kami sendiri kadang-kadang tak reti nak jaga diri.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.57 (2).jpeg", rot: 2 },
+  { caption: "Di sebalik kegusaran dan kesusahan Umi, Umi tetap pastikan kami sentiasa gembira.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.57 (3).jpeg", rot: -1 },
+  { caption: "Umi selalu nak bawa kita ke mana-mana, sebab bagi Umi, masa bersama keluarga itu paling berharga.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.57 (1).jpeg", rot: 3 },
+  // bottom row: left → right
+  { caption: "Umi selalu tekankan agama dulu. Along rasa gembira sangat dapat tunaikan umrah dengan Umi.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.58 (2).jpeg", rot: -2 },
+  { caption: "Umi selalu pastikan kami nampak segak dan cantik, walaupun kami kadang-kadang tak kisah pun.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.58.jpeg", rot: 2 },
+  { caption: "Semoga keluarga kita kekal bahagia sampai bila-bila.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.59.jpeg", rot: -1 },
+  { caption: "Tak kira sejauh mana jarak memisahkan, Umi tetap luangkan segalanya untuk lihat sendiri keadaan kami.", img: "pics/WhatsApp Image 2026-05-17 at 18.10.58 (1).jpeg", rot: 1 },
 ];
 
 function Gallery() {
   return (
     <section className="scene gallery-scene" id="gallery">
       <div className="center" style={{ marginBottom: 70 }}>
-        <span className="section-eyebrow">forty-five years, in pictures</span>
-        <h2 className="section-title">a small <em>album</em></h2>
+        <span className="section-eyebrow">kenangan sepanjang tahun</span>
+        <h2 className="section-title">album kecil <em>untuk Umi</em></h2>
         <p className="ink-soft" style={{ maxWidth: 520, margin: "0 auto", fontSize: 18, lineHeight: 1.55 }}>
-          Drop your real photos in later — for now these are placeholders, but each one has a memory attached.
+          Beberapa kenangan kecil yang mengingatkan Along betapa besarnya kasih sayang Umi dalam hidup kami.
         </p>
       </div>
 
@@ -232,14 +241,16 @@ function Gallery() {
         .gallery-scene { background: var(--cream); padding-bottom: 160px; }
         .polaroid-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 70px 36px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 60px 28px;
           max-width: 1200px; margin: 0 auto;
           padding: 20px;
         }
+        @media (max-width: 900px) { .polaroid-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .polaroid-grid { grid-template-columns: 1fr; } }
         .polaroid {
           background: #fff;
-          padding: 16px 16px 60px;
+          padding: 14px 14px 18px;
           box-shadow: 0 10px 30px rgba(42, 24, 48, 0.18), 0 1px 0 rgba(0,0,0,0.05);
           transform: rotate(var(--rot, 0deg));
           transition: transform 0.4s cubic-bezier(.3,.7,.3,1.3), box-shadow 0.4s ease;
@@ -253,26 +264,12 @@ function Gallery() {
         }
         .polaroid .photo {
           aspect-ratio: 1/1;
-          background: var(--ph, #b86a7a);
-          background-image:
-            radial-gradient(circle at 30% 25%, rgba(255,255,255,0.25), transparent 50%),
-            radial-gradient(circle at 70% 75%, rgba(0,0,0,0.18), transparent 50%);
           position: relative; overflow: hidden;
         }
-        .polaroid .photo-year {
-          position: absolute; bottom: 10px; right: 12px;
-          font-family: var(--display);
-          font-size: 18px; color: rgba(255,255,255,0.7);
-          letter-spacing: 0.2em;
-        }
-        .polaroid .photo-icon {
-          position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-          color: rgba(255,255,255,0.5);
-        }
         .polaroid .caption {
-          position: absolute; bottom: 14px; left: 16px; right: 16px;
-          font-family: var(--script); font-size: 19px; color: var(--ink);
-          line-height: 1.2;
+          margin-top: 12px;
+          font-family: var(--script); font-size: 17px; color: var(--ink);
+          line-height: 1.35; text-align: center;
         }
         .polaroid .pin {
           position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
@@ -285,15 +282,12 @@ function Gallery() {
   );
 }
 
-function Polaroid({ caption, year, color, rot, idx }) {
-  // alternating photo placeholder icons
-  const icons = [<BloomMark size={70} key="b" />, <LeafSprig size={80} key="l" />, <FloralSpray size={80} key="f" />];
+function Polaroid({ caption, img, rot }) {
   return (
-    <div className="polaroid" style={{ "--rot": `${rot}deg`, "--ph": color }}>
+    <div className="polaroid" style={{ "--rot": `${rot}deg` }}>
       <div className="pin" />
       <div className="photo">
-        <div className="photo-icon">{icons[idx % icons.length]}</div>
-        <div className="photo-year">{year}</div>
+        <img src={img} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
       </div>
       <div className="caption">{caption}</div>
     </div>

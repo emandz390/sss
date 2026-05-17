@@ -1,22 +1,22 @@
 // ============ SECTION: Timeline ============
 const TIMELINE = [
-  { year: "1981", title: "lahir", body: "Born in Kuantan, the second of five. They named you after a flower." },
-  { year: "1999", title: "pergi belajar", body: "Left home for university with one suitcase and Tok's tasbih in your pocket." },
-  { year: "2003", title: "married Ayah", body: "It rained the whole akad. You said it was good luck. It was." },
-  { year: "2005", title: "you became Umi", body: "Me. I arrived on a Tuesday. You held me before anyone else did." },
-  { year: "2012", title: "the garden begins", body: "First pot of bunga raya on the back balcony. It died. You bought another." },
-  { year: "2018", title: "the cookbook era", body: "You wrote down recipes you'd cooked from memory for forty years. The notebook is sacred." },
-  { year: "2023", title: "first solo trip", body: "Three days in Penang, just you and your camera. You came back radiant." },
-  { year: "2026", title: "forty-five", body: "Here. Now. The middle of your story, and the best chapter so far." },
+  { year: "1981", title: "Lahirnya Umi", body: "Umi dilahirkan di Ketereh, sebagai anak sulung kepada sembilan orang adik-beradik. Dari awal lagi, Umi sudah memikul peranan besar dalam keluarga." },
+  { year: "1999", title: "Melangkah ke matrikulasi", body: "Umi meninggalkan rumah untuk menyambung pelajaran di matrikulasi, membawa harapan, impian, dan masa depan yang ingin dibina." },
+  { year: "2003", title: "Menjadi isteri kepada Ayah", body: "Tahun Umi dan Ayah membina kehidupan bersama, memulakan perjalanan rumah tangga yang penuh kasih, sabar, dan pengorbanan." },
+  { year: "2005", title: "Umi menjadi seorang ibu", body: "Along hadir dalam hidup Umi. Sejak hari itu, tangan Umi menjadi tempat paling selamat untuk Along berpaut." },
+  { year: "2012", title: "Pindah ke Kelantan", body: "Keluarga kita memulakan bab baru di Kelantan, dengan suasana baru, rumah baru, dan lebih banyak kenangan yang tercipta bersama." },
+  { year: "Rumah sekarang", title: "Taman kecil Umi bermula", body: "Pokok pertama bunga tahi ayam kat tepi rumah akhirnya mati. Tapi Umi teruskan lagi, Umi beli yang baru, dan dari situ taman kecil Umi terus hidup." },
+  { year: "2026", title: "Empat puluh lima", body: "Di sini, sekarang. Bukan penghujung cerita, tapi pertengahan kisah Umi yang masih penuh warna, kasih sayang, dan bab-bab indah yang belum selesai." },
+  { year: "Hari ini", title: "Masih dan selamanya menjadi cahaya kami", body: "Sampai hari ini, Umi menjadi tempat kami pulang, tempat kami mengadu, dan sebab rumah sentiasa terasa seperti rumah." },
 ];
 
 function Timeline() {
   return (
     <section className="scene dark timeline-scene" id="timeline">
       <div className="center" style={{ marginBottom: 80 }}>
-        <span className="section-eyebrow" style={{ color: "var(--gold-bright)" }}>the long way around</span>
+        <span className="section-eyebrow" style={{ color: "var(--gold-bright)" }}>perjalanan hidup Umi</span>
         <h2 className="section-title" style={{ color: "var(--cream)" }}>
-          forty-five <em>years of you</em>
+          45 tahun <em>kisah Umi</em>
         </h2>
       </div>
 
@@ -117,22 +117,61 @@ function TLEvent({ year, title, body, side }) {
   );
 }
 
+// ============ SECTION: Video montage ============
+function VideoSection() {
+  return (
+    <section className="scene video-scene" id="video">
+      <div className="center" style={{ marginBottom: 60 }}>
+        <span className="section-eyebrow">Disediakan oleh ayah</span>
+        <h2 className="section-title">montaj kecil <em>untuk Umi</em></h2>
+        <p className="ink-soft" style={{ maxWidth: 560, margin: "0 auto", fontSize: 18, lineHeight: 1.55 }}>
+          Sebuah video ringkas yang menghimpunkan gambar-gambar Umi, sebagai kenangan kecil sempena hari lahir Umi yang ke-45.
+        </p>
+      </div>
+
+      <div className="video-wrap">
+        <video controls className="umi-video">
+          <source src="video/montaj-umi.mp4" type="video/mp4" />
+          Browser anda tidak menyokong video ini.
+        </video>
+      </div>
+
+      <style>{`
+        .video-scene { background: var(--cream); padding-bottom: 160px; }
+        .video-wrap {
+          max-width: 860px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        .umi-video {
+          width: 100%;
+          border-radius: 12px;
+          box-shadow: 0 20px 60px rgba(42, 24, 48, 0.22), 0 0 0 1px rgba(143,107,31,0.10);
+          display: block;
+          background: #1c0f24;
+        }
+      `}</style>
+    </section>
+  );
+}
+
 // ============ SECTION: Family wishes ============
 const WISHES = [
-  { from: "Ayah", role: "your husband, 23 years", text: "Twenty-three years and you still surprise me. Selamat hari lahir, my love. Here's to forty-five more, kalau Tuhan izinkan.", tone: "rose" },
-  { from: "Angah", role: "your second", text: "Umi, terima kasih for the late-night Maggi and the not-asking-questions. I owe you everything. Sayang Umi.", tone: "gold" },
-  { from: "Adik", role: "your youngest", text: "You're the only person who lets me steal her clothes without complaining (out loud). I love you, Umi. You are my best friend.", tone: "sage" },
-  { from: "Mak Long", role: "your eldest sister", text: "Adik kecil. Forty-five looks good on you. Remember when you cried because I wouldn't share my pencil? I would share it now.", tone: "rose" },
-  { from: "Nenek", role: "your mother", text: "Anak Mak. You are still my baby. Panjang umur, murah rezeki, dan sentiasa dilindungi Allah.", tone: "gold" },
-  { from: "Cik Wan", role: "neighbour, friend, accomplice", text: "Kakak Yati! The garden gossip is not the same without you on Sunday mornings. May your bunga raya always bloom.", tone: "sage" },
+  { from: "Ayah", role: "suami Umi, 23 tahun", text: "Sanah helwah Umi. Semoga di hari lahir Umi ini, segala dosa diampunkan, amal soleh diterima, dan Allah SWT sentiasa memberikan Umi kekuatan serta kesabaran. Semoga syurga menjadi tempat kita sekeluarga.", tone: "rose" },
+  { from: "Adik", role: "anak bongsu Umi", text: "Umi satu-satunya orang yang bagi saya curi makeup dia tanpa marah kuat-kuat. I love you, Umi. You are my best friend.", tone: "sage" },
+  { from: "Angah", role: "anak kedua Umi", text: "Selamat hari jadi Umi 🎉💐 Semoga Umi panjang umur, murah rezeki dan sentiasa sihat walafiat. Terima kasih sebab sabar melayan perangai Angah yang kadang-kadang \"baik\" ni 🤣 Angah doa Umi sentiasa bahagia… dan semoga Umi tak cepat tua walaupun selalu fikir pasal Angah 😜🤍", tone: "gold" },
+  { from: "Mokteh", role: "adik Umi", text: "Selamat hari lahir kakak sulungku 🤍 Terima kasih sebab selalu jadi tempat bergantung dan tempat mengadu. Semoga Allah panjangkan umur, murahkan rezeki, beri kesihatan yang baik, dan bahagiakan kakak sulungku serta family tercinta selalu. Sayang my sistur dunia akhirat 🌸", tone: "rose" },
+  { from: "Cikju", role: "adik Umi", text: "Terima kasih dah menjadi seorang kakak sulung terbaik untuk kami adik-beradik 🥹 Jue tahu banyak dugaan masa Tie nak membesar, tapi Tie dapat bertahan dan capai kejayaan yang Tie mahukan dengan baik hingga berjaya. Jue tahu jadi anak sulung dalam adik-beradik kita bukan senang. Jue minta maaf kalau ada salah silap sebagai adik. Jue ingat lagi masa kecil, Jue dan Dilah selalu kena kejar dengan Tie masa Tie balik dari perantauan sebab lari daripada kena potong rambut 🤭😅 Rindu sangat dan lucu sangat bila ingat balik momen dulu-dulu. Walaupun Jue, Dilah, Lily, dan Pikah kecil masa tu dan kurang momen main bersama, Jue sangat gembira ada kakak yang ambil berat pada kami dari dulu sampai sekarang. Terima kasih jadi kakak terbaik untuk Jue dan adik-adik 🌹❤️ Selamat ulang tahun kelahiran untuk kakakku, Kak Tie 🎂🎀", tone: "gold" },
+  { from: "Nazian", role: "keluarga tersayang", text: "Happiest birthday Kak Yati 🎂🍰🧁 Didoakan semoga Kak Yati dikurniakan kebaikan dunia dan akhirat, dipanjangkan umur dalam taat, diberi rezeki yang melimpah ruah seperti air zam-zam yang mengalir laju, serta diberi kebahagiaan bersama keluarga tersayang dunia dan akhirat. Kak Yati, semoga terus menjadi kuat. Setiap ujian yang Allah berikan adalah kemanisan yang kita belum tahu kelak. Dengan berkat memasuki bulan Zulhijjah ini, semoga setiap doa dan permintaan dimakbulkan 🤲🏻 Sayang Kak Yati kerana Allah ❤️ Dari Yan, Syakir dan Aan 🫰🏻", tone: "sage" },
+  { from: "Along", role: "anak sulung Umi", text: "Selamat hari lahir Umi. Semoga Umi sentiasa bahagia, sihat dan capai semua yang Umi hajatkan. Terima kasih Umi dan Ayah sebab menjadi insan yang sentiasa menyokong Along dalam apa jua keadaan. Along sayang Umi dan Ayah sangat-sangat.", tone: "rose" },
 ];
 
 function Wishes() {
   return (
     <section className="scene wishes-scene" id="wishes">
       <div className="center" style={{ marginBottom: 70 }}>
-        <span className="section-eyebrow">whispers from the people who love you</span>
-        <h2 className="section-title">a chorus of <em>doa</em></h2>
+        <span className="section-eyebrow">ucapan daripada insan yang menyayangi Umi</span>
+        <h2 className="section-title">himpunan ucapan dan <em>doa untuk Umi</em></h2>
       </div>
 
       <div className="wishes-grid">
@@ -320,4 +359,4 @@ function Recipe() {
   );
 }
 
-Object.assign(window, { Timeline, Wishes, Recipe });
+Object.assign(window, { Timeline, VideoSection, Wishes, Recipe });
